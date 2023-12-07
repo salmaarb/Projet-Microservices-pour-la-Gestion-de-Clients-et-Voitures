@@ -64,8 +64,11 @@ microservice-voiture:
    3.  Exécutez tous les micro-service : Eureka , Client et voiture 
    4. Lancez votre navigateur et tapez : http://localhost:8090/carr/{id_voiture}. Sur la console vos aurez : exemple id=2
 ![image](https://github.com/salmaarb/Projet-Microservices-pour-la-Gestion-de-Clients-et-Voitures/assets/119877992/1a9b7c27-778c-4954-9af8-59345a6c7ad2)
-Mon microservice voiture peut interroger le microservice client de manière transparente pour obtenir tous les informations.
+
+Microservice voiture peut interroger le microservice client de manière transparente pour obtenir tous les informations.
+
 ![image](https://github.com/salmaarb/Projet-Microservices-pour-la-Gestion-de-Clients-et-Voitures/assets/119877992/51e20ae2-2648-4951-a0e2-c08c8ceed99f)
-   Mon microservice voiture peut interroger le microservice client de manière transparente pour obtenir les informations nécessaires sur le client associé à une voiture.
+
+Microservice voiture peut interroger le microservice client de manière transparente pour obtenir les informations nécessaires sur le client associé à une voiture.
  
 
