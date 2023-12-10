@@ -10,7 +10,8 @@ Spring Boot : Utilisé pour le développement du microservice.
 Hibernate: Utilisé pour la couche de persistance des données.
 # Création du service discovery Eureka
 Eureka est un service de découverte de microservices développé par Netflix et fait partie du framework Spring Cloud. Le principal objectif de la création d'un serveur Eureka est de faciliter la gestion et la découverte des microservices dans une architecture distribuée.
-![image](https://github.com/salmaarb/Projet-Microservices-pour-la-Gestion-de-Clients-et-Voitures/assets/119877992/d298b035-6d3a-4211-aa7b-86a6f28dd6e0)
+<img  alt="image" src="https://github.com/salmaarb/Projet-Microservices-pour-la-Gestion-de-Clients-et-Voitures/assets/119877992/fce8b919-dbf5-4c18-9882-360fe5670440">
+
 # Création d’un service Gateway
 La création d'un service de passerelle (Gateway) dans une architecture basée sur des microservices a plusieurs objectifs et avantages.La passerelle sert de point d'entrée central pour l'ensemble du système. Au lieu d'avoir plusieurs points d'entrée pour chaque microservice, la passerelle offre un point d'accès unique pour les clients et les utilisateurs finaux.La passerelle peut effectuer un routage dynamique des requêtes vers les différents microservices en fonction de critères tels que le chemin de l'URL, les en-têtes HTTP, ou d'autres paramètres. Cela permet une gestion flexible du trafic.
 voici les dependances:
@@ -42,7 +43,7 @@ Lombok Bibliothèque d'annotation Java qui permet de réduire le code passe-part
 Dans le code,on a créé une interface MicroserviceClientProxy qui agit comme un client Feign pour le microservice client. Cette interface déclare les méthodes correspondant aux points de terminaison du microservice client et utilise des annotations Feign pour définir le chemin, la méthode HTTP.
 
 import java.util.List;
-@FeignClient(name="SERVICE-CLIENT", url="http://localhost:8080")
+@FeignClient(name="SERVICE-CLIENT", url="http://localhost:1901")
 
 public interface MicroserviceClientProxy {
     @GetMapping("/clients")
@@ -63,11 +64,11 @@ Cela favorise la séparation des préoccupations entre les microservices, car le
 
 microservice-client:
 
-  url: http://localhost:8080 
+  url: http://localhost:1901 
   
 microservice-voiture:
 
-  url: http://localhost:8090  
+  url: http://localhost:1900  
   
 # Comment exécuter le projet
    1. Cloner le référentiel depuis GitHub.
@@ -76,14 +77,21 @@ microservice-voiture:
 
    3.  Exécutez tous les micro-service : Eureka , Client et voiture
     
-   4. Lancez votre navigateur et tapez : http://localhost:8090/carr/{id_voiture}. Sur la console vos aurez : exemple id=2
+   4. Lancez votre navigateur et tapez : http://localhost:1900/carr/{id_voiture}. Sur la console vos aurez : exemple id=2
 
-![image](https://github.com/salmaarb/Projet-Microservices-pour-la-Gestion-de-Clients-et-Voitures/assets/119877992/1a9b7c27-778c-4954-9af8-59345a6c7ad2)
+<img  alt="image" src="https://github.com/salmaarb/Projet-Microservices-pour-la-Gestion-de-Clients-et-Voitures/assets/119877992/0ad2215a-3df0-46ae-a234-5dd1a40ed839">
+
 
 Microservice voiture peut interroger le microservice client de manière transparente pour obtenir tous les informations.
 
-![image](https://github.com/salmaarb/Projet-Microservices-pour-la-Gestion-de-Clients-et-Voitures/assets/119877992/51e20ae2-2648-4951-a0e2-c08c8ceed99f)
+<img  alt="image" src="https://github.com/salmaarb/Projet-Microservices-pour-la-Gestion-de-Clients-et-Voitures/assets/119877992/f386ebcf-3c3c-4dd0-b38b-13f49941f502">
+
 
 Microservice voiture peut interroger le microservice client de manière transparente pour obtenir les informations nécessaires sur le client associé à une voiture.
- 
+
+ <img  alt="image" src="https://github.com/salmaarb/Projet-Microservices-pour-la-Gestion-de-Clients-et-Voitures/assets/119877992/bcd952ea-986b-42d9-bcc9-c03d5628f285">
+
+<img  alt="image" src="https://github.com/salmaarb/Projet-Microservices-pour-la-Gestion-de-Clients-et-Voitures/assets/119877992/dda6f036-4714-4685-aaea-39502cf03134">
+
+Microservice client peut interroger le microservice voiture de manière transparente pour obtenir tous les informations des voitures.
 
